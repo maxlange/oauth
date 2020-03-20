@@ -1,0 +1,17 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: test-eureka
+eureka:
+  instance:
+    hostname: test-eureka2
+#    health-check-url-path: /actuator/health
+#    prefer-ip-address: true  #使用ip注册到注册中心
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port}  #注册中心显示的服务的名字
+#    ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://test-eureka1:9010/eureka/

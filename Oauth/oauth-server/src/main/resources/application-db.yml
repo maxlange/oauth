@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: root
+    password: qbn123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.108.27.158:3306/qbn_oauth?useUnicode=true&characterEncoding=utf-8&useSSL=false&&allowMultiQueries=true
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      validation-timeout: 18800
+      connection-test-query: SELECT 1
+      minimum-idle: 10
+      idle-timeout: 30000
+      max-lifetime: 180000
+      connection-timeout: 30000
+      pool-name: DatebookHikariCP
+  redis:
+    host: 47.108.27.158
+    port: 6379
+    password: qbn123456
+    jedis:
+      pool:
+        # 连接池最大连接数（使用负值表示没有限制）
+        max-active: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        # max-wait: 5000
+        # 空闲连接
+        max-idle: 8
+        min-idle: 0
